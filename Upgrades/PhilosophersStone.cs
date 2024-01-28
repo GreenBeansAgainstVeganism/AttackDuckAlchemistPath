@@ -40,7 +40,7 @@ namespace AttackDuckAlchemistPath.Upgrades
 
       ProjectileModel splash = weapon.projectile.GetBehavior<CreateProjectileOnExhaustFractionModel>().projectile;
 
-      //splash.GetDamageModel().damage += 1f;
+      splash.GetDamageModel().damage += 1f;
       //splash.GetBehavior<DamageModifierForBloonStateModel>().damageAdditive += 4f;
       splash.radius += 3f;
       splash.pierce += 5f;

@@ -22,7 +22,7 @@ namespace AttackDuckAlchemistPath.Upgrades
 {
   class LifeTransmutation : UpgradePlusPlus<AlchemistPath>
   {
-    public override int Cost => 1000;
+    public override int Cost => 1200;
     public override int Tier => 3;
     //public override string Icon => GetTextureGUID(Name + "-Icon");
 
@@ -30,9 +30,6 @@ namespace AttackDuckAlchemistPath.Upgrades
 
     public override void ApplyUpgrade(TowerModel towerModel)
     {
-      GiveLifeModel bloonlives = new GiveLifeModel("GiveLifeModel_LifeTransmutation_",0.1f);
-      AddBehaviorToBloonModel addbloonlives = new AddBehaviorToBloonModel("AddBehaviorToBloonModel_LifeTransmutation", "LifeTransmutation", 999f, 1, new FilterWithTagModel("FilterWithTagModel_Regrow_","Grow",false), null, new BloonBehaviorModel[1] { bloonlives }, "", true, false, true, false, 0, true, 0, null, false);
-
       DamageModifierForTagModel regenDamage = new DamageModifierForTagModel("DamageModifierForTagModel_", "Grow", 1.0f, 9999999f,false,false);
 
       WeaponModel weapon = towerModel.GetAttackModel("AttackModel_Attack_").weapons[0];
@@ -42,7 +39,6 @@ namespace AttackDuckAlchemistPath.Upgrades
       splash.hasDamageModifiers = true;
 
       splash.AddBehavior(regenDamage);
-      splash.AddBehavior(addbloonlives);
     }
   }
 }

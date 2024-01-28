@@ -50,7 +50,7 @@ namespace AttackDuckAlchemistPath.Upgrades
       // Reduce perishing potions' bonus damage towards fortified moabs because it's way too powerful with rehit
       if(towerModel.tiers[1] >= 2)
       {
-        splash.GetBehaviors<DamageModifierForTagModel>().Find(m => m.tag.Equals("Moabs,Fortified")).damageAddative -= 10f;
+        splash.GetBehaviors<DamageModifierForTagModel>().Find(m => m.tag.Equals("Moabs,Fortified")).damageAddative -= 9f;
         splash.GetBehaviors<DamageModifierForTagModel>().Find(m => m.tag.Equals("Moabs")).damageAddative -= 2f;
       }
     }
